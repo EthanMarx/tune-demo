@@ -36,12 +36,12 @@ jobs:
       run: |
         docker run \
           --rm \
-          -v ${{ github.workspace }}:/opt/ray_kube/ \
-          --workdir /opt/ray_kube/example/ \
+          -v ${{ github.workspace }}:/opt/tune/ \
+          --workdir /opt/tune/ \
           --privileged \
           --entrypoint /bin/bash \
           quay.io/singularity/singularity:v3.8.1 \
-          -c 'singularity build --sandbox /tmp/app train.def && tar -czf /opt/ray_kube/app.tar.gz /tmp/app'
+          -c 'singularity build --sandbox /tmp/app train.def && tar -czf /opt/tune/app.tar.gz /tmp/app'
 
     # now copy the fs contents into an empty
     # container and push it to the registry
