@@ -48,7 +48,7 @@ jobs:
     - 
       name: build docker image
       env:
-        tag: ${{ env.REGISTRY }}/EthanMarx/tune-demo/train:latest
+        tag: ${{ env.REGISTRY }}/ethanmarx/tune-demo/train:latest
       run: |
         cat app.tar.gz | docker import - ${{ env.tag }}
         docker push ${{env.tag }}
