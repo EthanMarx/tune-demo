@@ -6,7 +6,7 @@ Stage: build
 . /opt/tune/tune/
 
 %post
-#python -m pip install poetry
-#poetry config virtualenvs.create false
-#cd /opt/tune/tune/ 
-#poetry install
+python -m pip install poetry
+poetry config virtualenvs.create false
+cd /opt/tune/tune/ 
+poetry install
