@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "tune"
+version = "0.1.0"
+description = "Tune pytorch model over ray cluster deployed with kubernets"
+authors = [
+    "Ethan Marx <ethan.marx@ligo.org>",
+]
+license = "MIT"
+#readme = "README.md"
+
+[tool.poetry.scripts]
+train = "train.main:main"
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.11"
+torchmetrics = "^0.11"
+lightning = "^2.0"
+wandb = "^0.15"
+boto3 = "^1.28.80"
+torchvision = "^0.16.1"
+ray = {version = "^2.8.0", extras = ["default"]}
+
+
+[[tool.poetry.source]]
+name = "torch"
+url = "https://download.pytorch.org/whl/cu116"
+secondary = true
+default = false
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

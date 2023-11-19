@@ -1,0 +1,12 @@
+Bootstrap: docker
+From: python:3.10.12-slim-bullseye
+Stage: build
+
+%files
+. /opt//tune-demo/train
+
+%post
+python -m pip install poetry
+poetry config virtualenvs.create false
+cd /opt/tune-demo/tune-demo/train 
+poetry install
