@@ -3,10 +3,10 @@ From: python:3.10.12-slim-bullseye
 Stage: build
 
 %files
-. /opt//tune-demo/train
+. /opt/tune/tune/
 
 %post
 python -m pip install poetry
 poetry config virtualenvs.create false
-cd /opt/tune-demo/tune-demo/train 
+cd /opt/tune/tune/ 
 poetry install
