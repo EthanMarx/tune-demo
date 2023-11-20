@@ -50,6 +50,6 @@ jobs:
       env:
         tag: ${{ env.REGISTRY }}/ethanmarx/tune-demo/train:latest
       run: |
-        cat app.tar.gz | docker import --change "ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin" -- ${{ env.tag }}
+        cat app.tar.gz | docker import --change "ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin" - ${{ env.tag }}
         docker push ${{env.tag }}
   
